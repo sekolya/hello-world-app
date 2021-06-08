@@ -5,7 +5,8 @@
 replicaCount: 10
 
 image:
-  repository: docker.sekolya.com/hello-world-stage:2d3d6dc
+  # repository: docker.sekolya.com/hello-world-stage:2d3d6dc
+  repository: docker.sekolya.com/hello-world-stage:9c17853
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -23,14 +24,14 @@ ingress:
      cert-manager.io/cluster-issuer: letsencrypt-prod
      #kubernetes.io/tls-acme: "true"
   hosts:
-    - host: dev.hello.sekolya.com
+    - host: qa.hello.sekolya.com
       paths: 
       - '/'
 
   tls: 
   - secretName: chart-example-tls
     hosts:
-      - dev.hello.sekolya.com
+      - qa.hello.sekolya.com
 
 
 resources: {}
